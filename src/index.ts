@@ -4,9 +4,8 @@
 // 2. Add types to the function in this file that shows the reviews when we click the button
 
 import { showReviewTotal, populateUser, showDetails, getTopTwoReviews} from './utils'
-import { Price, Country } from './types'
 import { Permissions , LoyaltyUser } from './enums'
-import Review from './interfaces'
+import {Review, Property}  from './interfaces'
 const propertyContainer = document.querySelector('.properties')
 const reviewContainer = document.querySelector('.reviews')
 const container = document.querySelector('.container')
@@ -46,20 +45,6 @@ const you = {
     isReturning: true,
     age: 35,
     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
-}
-
-interface Property {
-    image: string;
-    title: string;
-    price: Price;
-    location: {
-        firstLine: string;
-        city: string;
-        code: number | string;
-        country: Country;
-    }
-    contact: [ number, string];
-    isAvailable: boolean;
 }
 
 // Array of Properties
