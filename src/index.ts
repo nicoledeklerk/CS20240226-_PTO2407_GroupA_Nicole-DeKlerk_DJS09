@@ -1,33 +1,31 @@
-// Number Types mini-challenge 10 10.2
-// Write a function that will only accept numbers and attend to
-// all TypeScript weakness flags.
-// : number
+const propertyContainer = document.querySelector('.properties')
+
 import { showReviewTotal, populateUser } from './utils'
-let isOpen : boolean
+let isOpen: boolean
 
 const reviews : {
   name: string;
   stars: number;
   loyaltyUser: boolean;
   date: string;
-}[] = [ 
+  }[] = [ 
   {
     name: "Sheia",
     stars: 5,
     loyaltyUser: true,
-    date: "01-04-2021",
+    date: "01-04-2021"
   },
   {
     name: "Andrzej",
     stars: 3,
     loyaltyUser: false,
-    date: "28-03-2021",
+    date: "28-03-2021"
   },
   {
     name: "Omar",
     stars: 4,
     loyaltyUser: true,
-    date: "27-03-2021",
+    date: "27-03-2021"
   },
 ];
 
@@ -59,7 +57,7 @@ const properties : {
   isAvailable: boolean;
 }[] = [
   {
-    image: '',
+    image: 'images/colombia-property.jpg',
     title: 'Colombian Shack',
     price: 45,
     location: {
@@ -72,7 +70,7 @@ const properties : {
     isAvailable: true  
 },
 {
-    image: '',
+    image: 'images/poland-property.jpg',
     title: 'Polish Cottage',
     price: 34,
     location: {
@@ -85,7 +83,7 @@ const properties : {
     isAvailable: false 
 },
 {
-    image: '',
+    image: 'images/london-property.jpg',
     title: 'London Flat',
     price: 23,
     location: {
@@ -102,3 +100,13 @@ const properties : {
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 
 populateUser(you.isReturning, you.firstName)
+
+for (let i = 0; i < properties.length; i++) {
+  const card = document.createElement('div')
+  card.classList.add('card')
+  card.innerHTML = properties[i].title
+  const image = document.createElement('img')
+  image.setAttribute('src', properties[i].image)
+  card.appendChild(image)
+  propertyContainer.appendChild(card)
+}
