@@ -113,7 +113,7 @@ for (let i = 0; i < properties.length; i++) {
   image.setAttribute('src', properties[i].image)
   card.appendChild(image)
   propertyContainer.appendChild(card)
-  showDetails(authorityStatus, card, properties[i].price)
+  showDetails(you.permissions, card, properties[i].price)
 }
 
 let currentLocation: [string, string, number] = ['Lime Acres', '14:56', 21]
